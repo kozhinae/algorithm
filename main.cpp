@@ -14,10 +14,12 @@ int main() {
         char arr[10000];
         file >> line;
         for (int i = 0; i < line.length(); i++) {
+            //ввод новой скобочной последовательности
             if (line[i] == '(' or line[i] == '[') {
                 arr[pointer] = line[i];
                 pointer++;
             } else {
+                //закрываем скобочную последовательность
                 if (pointer) {
                     if (line[i] == ')') {
                         if (arr[pointer - 1] == '(') {
