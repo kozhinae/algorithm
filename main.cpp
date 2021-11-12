@@ -14,11 +14,13 @@ int main() {
     char arr[n][15];
     for (int i = 0; i < n; i++) {
         cin >> sign;
+        //добавили символ в очередь
         if (sign == '+') {
             cin >> value;
             strcpy(arr[pointer_in], value);
             pointer_in++;
         } else {
+            //извлекли символ из очереди
             cout << arr[pointer_out] << '\n';
             pointer_out++;
         }
