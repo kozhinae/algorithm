@@ -30,12 +30,15 @@ int main() {
     scanf("%d %lf", &n, &top1);
     double left = 0, right = top1, ans = 0;
     while ((right - left) > 0.01 / (n - 1)) {
+        //поиск высоты лампочки гирлянды
         double mid = (right + left) / 2;
         double last = top1;
         double now = mid;
         bulb0 = false;
+        //проверка на выход за границы
         bool limit = border(now, limit);
         for (int i = 3; i <= n; i++) {
+            //высота следующей лампочки
             double next = 2 * now - last + 2;
             limit = border(next, limit);
             if (!limit) {
